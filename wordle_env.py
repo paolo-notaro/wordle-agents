@@ -2,8 +2,10 @@ import random
 import numpy as np
 import gymnasium as gym
 from gymnasium import spaces
+from functools import lru_cache
 
 
+@lru_cache(maxsize=None)
 def compute_feedback(guess: str, target: str) -> str:
     feedback = ['b'] * 5
     used = [False] * 5
